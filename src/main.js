@@ -1,3 +1,3 @@
-import './modules/DefineCaracteres'
+import './modules/GeraSenha'
 
 import './assets/css/style.css';

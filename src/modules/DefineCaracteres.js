@@ -7,8 +7,8 @@ export default class DefineCaracteres {
     let symbols = "/*.,[]^~´`()&";
     let allowedCaracteres = [];
 
-    DefineCaracteres.verificaPermitidos(alphabet, numbers, symbols, allowedCaracteres)
-  }
+    return DefineCaracteres.verificaPermitidos(alphabet, numbers, symbols, allowedCaracteres)
+}
 
   static verificaPermitidos(alphabets, numbers, symbols, allowedCaracteres) {
     if (VerificaCheckBox.checkBoxMaiuscula()) {
@@ -27,5 +27,6 @@ export default class DefineCaracteres {
         allowedCaracteres.push(symbols)
     }
 
+    return [...allowedCaracteres]
   }
 }
