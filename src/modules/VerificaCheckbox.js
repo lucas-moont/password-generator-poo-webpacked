@@ -25,9 +25,9 @@ export class VerificaCheckBox{
 
     static checkBoxSimbol(){
         if(document.querySelector('.chk-simbolos').checked){
-            const poeSymbol = true 
+            return true 
         }else{
-            const poeSymbol = false 
+            return false 
         }
     }
 }

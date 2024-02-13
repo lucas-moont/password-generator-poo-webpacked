@@ -4,11 +4,13 @@ export default class DefineCaracteres {
   static defineCaract() {
     let alphabet = "abcdefjhijklmnopqrstuvxwyz";
     let numbers = "1234567890";
-    let symbos = "/*.,[]^~´`()&";
+    let symbols = "/*.,[]^~´`()&";
+    let allowedCaracteres = [];
+
+    DefineCaracteres.verificaPermitidos(alphabet, numbers, symbols, allowedCaracteres)
   }
 
-  verificaPermitidos(alphabets, numbers, symbols) {
-    let allowedCaracteres = [];
+  static verificaPermitidos(alphabets, numbers, symbols, allowedCaracteres) {
     if (VerificaCheckBox.checkBoxMaiuscula()) {
       allowedCaracteres.push(alphabets.toUpperCase());
     }
@@ -24,7 +26,6 @@ export default class DefineCaracteres {
     if(VerificaCheckBox.checkBoxSimbol()){
         allowedCaracteres.push(symbols)
     }
+
   }
 }
-
-DefineCaracteres.defineCaract();
