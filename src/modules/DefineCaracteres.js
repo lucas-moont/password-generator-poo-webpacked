@@ -1,22 +1,30 @@
-import { VerificaCheckBox } from "./VerificaCheckbox"
+import { VerificaCheckBox } from "./VerificaCheckbox";
 
 export default class DefineCaracteres {
-    static defineCaract(){
-        let alphabet = 'abcdefjhijklmnopqrstuvxwyz'
-        let numbers = '1234567890'
-        let symbos = '/*.,[]^~´`()&'
+  static defineCaract() {
+    let alphabet = "abcdefjhijklmnopqrstuvxwyz";
+    let numbers = "1234567890";
+    let symbos = "/*.,[]^~´`()&";
+  }
 
+  verificaPermitidos(alphabets, numbers, symbols) {
+    let allowedCaracteres = [];
+    if (VerificaCheckBox.checkBoxMaiuscula()) {
+      allowedCaracteres.push(alphabets.toUpperCase());
     }
 
-    verificaPermitidos(alphabets, numbers, symbols){
-        let allowedCaracteres = []
-        if(VerificaCheckBox.checkBoxMaiuscula()){
-            allowedCaracteres.push(alphabets.toUpperCase())
-        }
-        let poeMinuscula = VerificaCheckBox.checkBoxMinuscula()
-        let poeNum = VerificaCheckBox.checkBoxNum()
-        let poeSymbol = VerificaCheckBox.checkBoxSimbol()
+    if (VerificaCheckBox.checkBoxMinuscula()) {
+      allowedCaracteres.push(alphabets);
     }
+
+    if(VerificaCheckBox.checkBoxNum()){
+        allowedCaracteres.push(numbers)
+    }
+
+    if(VerificaCheckBox.checkBoxSimbol()){
+        allowedCaracteres.push(symbols)
+    }
+  }
 }
 
-DefineCaracteres.defineCaract()
+DefineCaracteres.defineCaract();
