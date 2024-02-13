@@ -1,3 +1,5 @@
+//VERIFICA QUAIS CHECKBOXES ESTÃO MARCADOS
+
 export class VerificaCheckBox{
     static checkBoxMaiuscula(){
         if(document.querySelector('.chk-maiusculas').checked){

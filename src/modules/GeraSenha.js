@@ -1,6 +1,9 @@
+//GERA A SENHA
+//MÓDULO DEPENDENTE DE DEFINE CARACTERES
 import DefineCaracteres from './DefineCaracteres'
 
 class GeraSenha {
+    //usa todos os métodos para gerar a senha
     static geraSenha(){
         let allowed = DefineCaracteres.defineCaract()
         let senha = ''
@@ -10,6 +13,7 @@ class GeraSenha {
         GeraSenha.mostraSenha(senha)
     }
 
+    //inclui pelo menos um dos caracteres necessários
     static includesNecessary(allowed, senha){
         allowed.forEach((item, index) => {
             senha = `${senha}${item[(Math.floor(Math.random() * item.length))]}` 
@@ -17,6 +21,7 @@ class GeraSenha {
         return senha
     }
 
+    //inclui a quantidade de caracteres necessários
     static includesQuantity(allowed, senha, necCaract){
         while (senha.length < necCaract){
             let arrayIndex = Math.floor(Math.random() * allowed.length)
@@ -27,6 +32,7 @@ class GeraSenha {
         return senha
     }
 
+    //mostra senha na tela
     static mostraSenha(senha){
         document.querySelector('.novaSenha').innerHTML = `${senha}`
     }
